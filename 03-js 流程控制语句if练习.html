@@ -1,23 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>03-js 流程控制语句if练习</title>
 </head>
-<body>
-<!-- 从键盘输入一个整数，判断其是否是偶数，如果是偶数就输出YES，否则输出NO  -->
-<script>
-var a=parseInt(prompt("请输入一个整数"));
-console.log(a);
-if(a%2==0){
-    console.log("YES");
-}else{
-    console.log("NO");
-}
 
-</script>
+<body>
+    <!-- 1.从键盘输入一个整数，判断其是否是偶数，如果是偶数就输出YES，否则输出NO  -->
+    <script>
+        var a = parseInt(prompt("请输入一个整数"));
+        console.log(a);
+        if (a % 2 == 0) {
+            console.log("YES");
+        } else {
+            console.log("NO");
+        }
+
+        // 2. 接收用户输入的1～7的整数，根据用户输入的整数，输出对应的星期几?
+        var day = Number(prompt("今天是"));
+        console.log(day);
+        console.log(typeof day);
+        if (day == 1) {
+            alert("周一");
+        } else if (day == 2) {
+            alert("周二");
+        } else if (day == 3) {
+            alert("周三");
+        } else if (day == 4) {
+            alert("周四");
+        } else if (day == 5) {
+            alert("周五");
+        } else if (day == 6) {
+            alert("周六");
+        } else if (day == 7) {
+            alert("周日");
+        } else {
+            alert("输入不正确")
+        }
+
+        // 3. 接收用户输入的一个整数month代表月份，根据月份输出对应的季节?
+        var month = +(prompt("现在的季节是："));
+        if (isNaN(month)) {
+            alert("请输入正确的月份")
+        } else {
+            if (month == 1 || month == 2 || month == 3) {
+                alert("春季");
+            } else if (month == 4 || month == 5 || month == 6) {
+                alert("夏季");
+            } else if (month == 7 || month == 8 || month == 9) {
+                alert("秋季");
+            } else if (month == 10 || month == 11 || month == 12) {
+                alert("冬季")
+            } else {
+                alert("什么季节都不是！")
+            }
+        }
+
+        // 4. 从键盘输入2个整数，判断大小后输出较大的那个数?
+        var num = parseFloat(prompt("数值大小比较"));
+        var num2 = parseFloat(prompt("数值大小比较"));
+        var max = num > num2 ? num : num2;
+        alert("较大的数值是：" + max);
+
+        // 5. 从键盘输入3个整数，排序后输出?
+    </script>
 
 </body>
+
 </html>
