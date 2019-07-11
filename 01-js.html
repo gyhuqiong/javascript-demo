@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert('行内式')">行内式</button><br/>
+<a href="javascript:alert('a标签行内式')">a标签行内式</a>
+
+   <!-- pratice1:摄氏度和华氏度转化。两者的换算关系是 华氏度 =  9 / 5 *  摄氏度 + 32；编写程序，让用户输入摄氏度，向用户提示对应的华氏温度。 -->
+   摄氏温度为：<input type="text" id="val1" value="">度<br/>
+   <p>他的华氏温度为<span id="sp1"></span></p>
+
+   <script>
+       var a = true;
+a = parseInt(a);
+			
+console.log(typeof a);
+console.log(a);
+
+       console.warn("警告");
+       console.error("错误");
+       document.write("文本输出");
+       prompt("弹出窗");
+       confirm("提示框")
+
+
+       var s=document.getElementById("val1");
+       s.onblur=function(){
+       document.getElementById("sp1").innerHTML=9/5*(s.value)+32;
+
+       }
+
+    //    转义字符
+       str = '我们的口号是:\'喜欢IT, 就上撩课!\'';
+       str = '\\\\\\';
+       console.log(str)
+   </script>
+
+
+
+摄氏度：<input type="text" value="" id="val2"><br/>
+华氏温度为：<p id="hp"></p>
+<script>
+
+
+
+var val2=document.getElementsByTagName("input")[1];
+
+
+val2.onblur=function(){
+    document.getElementById("hp").innerHTML=9/5*val2.value+32;
+}
+
+var str1 = null;
+var str2 = undefined;
+console.log(str1 == str2);
+console.log(str1=== str2);
+
+var a = null;
+a = String(a);
+			
+a = undefined;
+a = String(a);
+			
+console.log(typeof a);
+console.log(a);
+
+
+var a = true;
+a = parseInt(a);
+			
+console.log(typeof a); //number
+console.log(a);  //NaN
+</script>
+</body>
+</html>

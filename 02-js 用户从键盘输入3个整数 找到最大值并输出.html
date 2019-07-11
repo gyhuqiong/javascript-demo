@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户从键盘输入3个整数, 找到最大值并输出</title>
+</head>
+<body>
+  <script>
+//   用户从键盘输入3个整数, 找到最大值并输出 (Number和+一样可以转化类型为数值，也可以用parseInt或parseFloat)
+  var a,b,c,max;
+  a=Number(prompt("请输入第一个数"));
+  b=+(prompt("请输入第二个数"));
+  c=+(prompt("请输入第三个数"));
+
+//   a=parseInt(prompt("请输入第一个数"));
+//   b=parseInt(prompt("请输入第二个数"));
+//   c=parseInt(prompt("请输入第三个数"));
+  max=a>b?a:b;
+  max=max>c?max:c;
+  console.log(max);
+
+  </script>  
+</body>
+</html>
