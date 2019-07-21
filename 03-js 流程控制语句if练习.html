@@ -9,8 +9,10 @@
 </head>
 
 <body>
-    <!-- 1.从键盘输入一个整数，判断其是否是偶数，如果是偶数就输出YES，否则输出NO  -->
+
+
     <script>
+        // 1.从键盘输入一个整数，判断其是否是偶数，如果是偶数就输出YES，否则输出NO 
         var a = parseInt(prompt("请输入一个整数"));
         console.log(a);
         if (a % 2 == 0) {
@@ -204,10 +206,9 @@
         }
 
         console.log(sum);
-
-
-
-
+    </script>
+    <script>
+        // for循环练习
         // 获取1～100之间 7的倍数的个数并打印，并统计个数  while
         var bei = 0;
         var bnum = 0;
@@ -229,8 +230,134 @@
                 console.log(" 二级好友" + j)
             }
         }
-    </script>
 
+        // for循环嵌套实现:矩形绘制
+        for (var i = 0; i < 3; i++) {
+
+            for (var j = 0; j < 4; j++) {
+                document.write("*");
+            }
+            document.write("<br/>");
+        }
+        document.write("<br/><br/>");
+
+        // for循环嵌套实现:三角形绘制(1)
+        for (var i = 0; i < 5; i++) {
+            for (var j = 0; j <= i; j++) {
+                document.write("<span style='color:red'>*</span>");
+            }
+            document.write("<br/>");
+        }
+        document.write("<br/><br/>");
+
+        // for循环嵌套实现:三角形绘制(2)
+        for (var i = 0; i < 5; i++) {
+            for (j = i; j < 5; j++) {
+                document.write("<span style='color:green'>*</span>");
+            }
+            document.write('<br/>')
+        }
+        document.write("<br/><br/>");
+
+        // for循环嵌套实现:三角形绘制(3)
+        for (i = 1; i < 4; i++) {
+            for (j = 1; j <= i; j++) {
+                document.write(j);
+            }
+            document.write("<br/>")
+        }
+        document.write("<br/><br/>");
+
+
+        // for循环嵌套实现:打印正三角形
+        for (i = 0; i < 6; i++) {
+            for (j = i; j < 5; j++) {
+                document.write("-");
+            }
+            for (k = 0; k <= 2 * i; k++) {
+                document.write("*");
+            }
+            document.write("<br/>");
+        }
+        document.write("<br/><br/>");
+        // for循环嵌套实现:打印99乘法表
+        for (i = 1; i <= 9; i++) {
+            for (j = 1; j <= i; j++) {
+                document.write(j + "*" + i + "&nbsp;&nbsp;&nbsp;");
+            }
+            document.write("<br/>");
+        }
+
+
+        // 打印1-100之间所有奇数之和
+        var sum1 = 0;
+        for (var num1 = 0; num1 <= 100; num1++) {
+
+            if (num1 % 2 == 1) {
+                sum1 += num1;
+            }
+
+        }
+        document.write(sum1 + "&nbsp;");
+        document.write("<br/><br/>");
+        // 取出1000以内的水仙花数
+        for (var i = 100; i < 2000; i++) {
+            var a = i % 10; //取个位数
+            var b = Math.floor(i % 100 / 10); //取十位数，向下取整，Math.ceil()向上取整，Math.round()四舍五入取整，parseInt()去掉小数点后面取整
+            var c = Math.floor(i / 100) //取百位数，向下取整
+            var s = Math.pow(a, 3) + Math.pow(b, 3) + Math.pow(c, 3); //Math.pow(a,3) 代表a的三次方，即a*a*a
+            if (i == s) {
+                document.write("水仙花数：" + i + "<br/>");
+            }
+        }
+        document.write("<br/><br/>");
+        // 在页面中接收一个用户输入的数字，并判断该数是否是质数。质数：只能被1和它自身整除的数，1不是质数也不是合数，质数必须是大于1的自然数。
+        var z = Number(prompt("请输入大于1的质数"));
+        var flag = true;
+        for (var i = 2; i < z; i++) {
+            if (z % i == 0) {
+                flag = false;
+            }
+        }
+
+        if (flag) {
+            document.write("这是一个质数");
+        } else {
+            document.write("这不是一个质数");
+        }
+        document.write("<br/><br/>");
+        // 求1-100之间所有偶数的和、所有奇数的和
+        var asum = 0;
+        var asum1 = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                asum += i;
+            } else {
+                asum1 += i;
+            }
+        }
+        document.write("偶数之和为：" + asum + "<br/>");
+        document.write("奇数之和为：" + asum1);
+
+        document.write("<br/><br/>");
+        // 本金10000元存入银行，年利率是千分之三，每过1年，将本金和利息相加作为新的本金。计算5年后，获得的本金是多少？
+
+        // var t = 10000;
+        // for (var i = 1; i < 6; i++) {
+        //     t += t * 0.003;
+        // }
+        // document.write(t);
+
+
+        function ab(a, b) {
+            for (var i = 1; i < a; i++) {
+                b += b * 0.003;
+            }
+            return b;
+        }
+        var ab1 = ab(3, 10000);
+        document.write(ab1);
+    </script>
 </body>
 
 </html>
